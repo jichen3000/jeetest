@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Notification list</title>
+</h:head>
+<h:body bgcolor="white">
+
+	<h:form id="createForm" styleClass="123">
+		<h:panelGrid columns="4" style="width:60%">
+			<h:outputLabel value="Name" />
+			<h:inputText value="#{tabBean.contract.name}" />
+			<h:outputLabel value="Detail" />
+			<h:inputText value="#{tabBean.contract.detail}" />
+
+			<h:panelGroup style="float:Right;">
+				<p:commandButton value="save" ajax="true"
+					onclick="allSave();" action="#{tabBean.save}"/>
+			</h:panelGroup>
+		</h:panelGrid>
+	</h:form>
+
+	<p:growl id="growl" showDetail="true" />
+
+	<p:tabView id="tabView" dynamic="true">
+		<p:tab title="Charge" id="charge">
+			<ui:include src="/tab/charge.xhtml" />
+		</p:tab>
+
+		<p:tab title="Equipment" id="equipment">
+			<ui:include src="/tab/equipment.xhtml" />
+		</p:tab>
+	</p:tabView>
+
+	<script type="text/javascript">
+	    function allSave(){
+	    	jQuery('button.save_by_all').click();
+	    }
+		
+	</script>
+</h:body>
+</html>

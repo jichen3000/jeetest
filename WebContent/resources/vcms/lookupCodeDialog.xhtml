@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<composite:interface>
+	<composite:attribute name="dialogShowName" />
+	<composite:attribute name="dialogWidetVar" />
+	<composite:attribute name="codeList" />
+	<composite:attribute name="searchParamCode" />
+	<composite:attribute name="searchCodeAction"
+		method-signature="void action()" />
+	<composite:attribute name="updateElement" />
+</composite:interface>
+<composite:implementation>
+	<script type="text/javascript">
+		//         
+		function okclick() {
+			var select_radio_name = "input[name='" + "#{cc.attrs.id}"
+					+ ":codeDataTable_selection_radio" + "']:checked";
+			jQuery("input[name='#{cc.attrs.updateElement}']").val(
+					jQuery(select_radio_name).parents("tr").children(
+							"td.code-value").text());
+		}
+		//
+	</script>
+	<p:dialog header="#{cc.attrs.dialogShowName} Code" appendToBody="true"
+		widgetVar="#{cc.attrs.dialogWidetVar}" resizable="false" modal="true"
+		width="600">
+		<h:form id="#{cc.attrs.id}Form" prependId="false">
+			<h:panelGrid columns="5" width="100%">
+				<h:outputText value="Code:">
+				</h:outputText>
+				<h:inputText size="7" value="#{cc.attrs.searchParamCode['code']}"></h:inputText>
+				<h:outputText value="Name:">
+				</h:outputText>
+				<h:inputText size="14" value="#{cc.attrs.searchParamCode['name']}"></h:inputText>
+				<p:commandButton value="Search"
+					action="#{cc.attrs.searchCodeAction}"
+					update="#{cc.attrs.id}Form"></p:commandButton>
+			</h:panelGrid>
+			<p:dataTable id="codeDataTable" value="#{cc.attrs.codeList}"
+				style="width:100%" var="item" rowIndexVar="rowIndex"
+				paginator="true" rows="10" rowsPerPageTemplate="5,10,15"
+				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {NextPageLink} {LastPageLink} ">
+				<p:column id="codeRadio" selectionMode="single" />
+				<p:column styleClass="code-value" style="width:35%">
+					<f:facet name="header">
+						<h:outputText value="Code"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{item.code}"></h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Name"></h:outputText>
+					</f:facet>
+					<h:outputText value="#{item.name}"></h:outputText>
+				</p:column>
+			</p:dataTable>
+			<p:commandButton value="OK"
+				style="left:50%" styleClass="okc"
+				oncomplete="okclick();#{cc.attrs.dialogWidetVar}.hide();"></p:commandButton>
+		</h:form>
+	</p:dialog>
+
+</composite:implementation>
+</html>

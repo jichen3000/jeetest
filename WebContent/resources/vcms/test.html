@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<head>
+<title>Confirm Before Leave</title>
+
+</head>
+<body>
+	<script type="text/javascript">
+		//         
+
+		jQuery(function() {
+			alert("j_idt26" + ":codeDataTable_selection_radio");
+			function okclick() {
+				var radio_class_str = "type-radio";
+				var code_class_str = "type-code";
+			}
+		});
+
+		//
+	</script>
+	<div id="j_idt26:j_idt54" title="Type  Code">
+		<form id="j_idt26:typeCodeDialogForm"
+			name="j_idt26:typeCodeDialogForm" method="post"
+			action="/jeetest/commondialog/main.xhtml"
+			enctype="application/x-www-form-urlencoded">
+			<input type="hidden" name="j_idt26:typeCodeDialogForm"
+				value="j_idt26:typeCodeDialogForm" />
+			<div id="j_idt26:codeDataTable" class="ui-datatable ui-widget"
+				style="width: 100%">
+				<div id="j_idt26:codeDataTable_paginatortop"
+					class="ui-paginator ui-paginator-top ui-widget-header ui-corner-tl ui-corner-tr"></div>
+				<table>
+					<thead>
+						<tr>
+							<th id="j_idt26:codeDataTable:codeRadio"
+								class="ui-state-default ui-selection-column type-radio"></th>
+							<th id="j_idt26:codeDataTable:j_idt59"
+								class="ui-state-default type-code" style="width: 35%">Code</th>
+							<th id="j_idt26:codeDataTable:j_idt50" class="ui-state-default">Name</th>
+						</tr>
+					</thead>
+					<tbody id="j_idt26:codeDataTable_data" class="ui-datatable-data">
+						<tr id="j_idt26:codeDataTable_row_0"
+							class="ui-widget-content ui-datatable-even">
+							<td class="ui-selection-column type-radio"><input
+								type="radio" name="j_idt26:codeDataTable_selection_radio" /></td>
+							<td style="width: 35%" class="type-code">t1</td>
+							<td>type 1</td>
+						</tr>
+						<tr id="j_idt26:codeDataTable_row_1"
+							class="ui-widget-content ui-datatable-odd">
+							<td class="ui-selection-column type-radio"><input
+								type="radio" name="j_idt26:codeDataTable_selection_radio" /></td>
+							<td style="width: 35%" class="type-code">t2</td>
+							<td>type 2</td>
+						</tr>
+						<tr id="j_idt26:codeDataTable_row_2"
+							class="ui-widget-content ui-datatable-even">
+							<td class="ui-selection-column type-radio"><input
+								type="radio" name="j_idt26:codeDataTable_selection_radio" /></td>
+							<td style="width: 35%" class="type-code">t3</td>
+							<td>type 3</td>
+						</tr>
+					</tbody>
+				</table>
+				<div id="j_idt26:codeDataTable_paginatorbottom"
+					class="ui-paginator ui-paginator-bottom ui-widget-header ui-corner-bl ui-corner-br"></div>
+				<input type="hidden" id="j_idt26:codeDataTable_selection"
+					name="j_idt26:codeDataTable_selection" value="" />
+			</div>
+</body>
+</HTML>

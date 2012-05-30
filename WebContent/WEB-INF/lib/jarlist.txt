@@ -1,0 +1,6 @@
+derbyclient
+jackson-all-1.9.5
+javax.j2ee.persistence
+junit-4.8.1
+ojdbc6
+primefaces-2.2.1

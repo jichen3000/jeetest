@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:vcms="http://java.sun.com/jsf/composite/vcms">
+<h:head>
+	<title>common</title>
+</h:head>
+<h:body bgcolor="white">
+	<h2>
+		<h:outputText value="Main" />
+	</h2>
+
+	<p:panel header="Create" toggleable="true">
+		<h:form id="createForm" styleClass="check_change">
+			<h:panelGroup>
+				<p:dataTable id="codeDataTable" value="#{fatherBean.fatherList}"
+					style="width:100%" var="item" rowIndexVar="rowIndex"
+					paginator="true" rows="10" rowsPerPageTemplate="5,10,15"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {NextPageLink} {LastPageLink} ">
+					<p:column id="codeRadio" selectionMode="single" />
+					<p:column styleClass="code-value" style="width:35%">
+						<f:facet name="header">
+							<h:outputText value="id"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{item.id}"></h:outputText>
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Name"></h:outputText>
+						</f:facet>
+						<h:outputText value="#{item.f1}"></h:outputText>
+					</p:column>
+				</p:dataTable>
+			</h:panelGroup>
+			<h:panelGroup style="float:Right;">
+				<p:commandButton value="save" ajax="false"
+					action="#{fatherBean.save}" />
+			</h:panelGroup>
+			<h:panelGroup style="float:Right;">
+				<p:commandButton value="save clob" ajax="false"
+					action="#{fatherBean.saveClob}" />
+			</h:panelGroup>
+		</h:form>
+	</p:panel>
+</h:body>
+</html>

@@ -1,0 +1,47 @@
+<project basedir=".">
+    <property name="compiledFiles" location="build/classes" />
+    <property name="libraries" location="libs" />
+    <property name="sql" location="sql" />
+ 
+    <path id="lib.path">
+        <pathelement location="${libraries}" />
+        <fileset dir="${libraries}">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+	
+	<target name="compile" description="compile the source">
+		<javac includeantruntime="false" srcdir="src" destdir="${compiledFiles}">
+			<classpath>
+            	<fileset dir="${libraries}">
+            	            <include name="*.jar" />
+            	</fileset>
+				<path location="${compiledFiles}" />
+            </classpath>
+		</javac>
+		<copy todir="${compiledFiles}/META-INF">
+		    <fileset dir="src/META-INF"/>
+		  </copy>
+	</target>
+ 
+    <target name="gen-schema" depends="" description="Export schema to DDL file">
+        <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="lib.path" />
+        <mkdir dir="${sql}" />
+        <touch file="${sql}/script.sql" />
+        <hibernatetool destdir="sql">
+            <jpaconfiguration persistenceunit="jeetest" />
+            <classpath>
+                <path location="${compiledFiles}" />
+            	<fileset dir="${libraries}">
+            	            <include name="*.jar" />
+            	        </fileset>
+            </classpath>
+            <hbm2ddl outputfilename="script.sql" format="true" export="false" drop="true" />
+        </hibernatetool>
+        <echo message="The file was saved in: ${sql}" />
+    </target>  
+	
+    <target name="Hello">
+        <echo message="Hello World Ant!"/>
+    </target>
+</project>

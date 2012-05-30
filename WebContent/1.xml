@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://entity.core.nol.com/"
+	xmlns:tns="http://entity.core.nol.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="FelDetail">
+		<xs:sequence>
+			<xs:element name="advanceRedeliveryNoticeDay" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="22" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="annualDpctnPercentage" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:fractionDigits value="5" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="applySubleaseCasualtyTermsFlag" type="xs:boolean" />
+			<xs:element name="buildDownMonthsCount" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="22" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ccaFlag" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="taxCountryCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="companyIdCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="costCenterCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="casualtyCalculationMethodName" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="30" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="casualtyTierQuantity" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="14" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentLesseeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentLessorCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentOwnerCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="exchangeCurrencyCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="exerciseEarlyOutOptionFlag" type="xs:boolean" />
+			<xs:element name="freeDayOneTimeChargeFlag" type="xs:boolean" />
+			<xs:element name="leaseClassCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="64" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="leaseTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="minOnhireDaysCount" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="22" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="minResidualPercentage" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:fractionDigits value="5" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="perdiemCalculationMethodName" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="30" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="plantIdCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="postBuildDownPerdiemFlag" type="xs:boolean" />
+			<xs:element name="purchasingOrganizationIdCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="suppressMinOnhireFlag" type="xs:boolean" />
+			<xs:element name="taxApplicableFlag" type="xs:boolean" />
+			<xs:element name="taxCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="titleTransferIfDvFlag" type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="EquipmentApplicable">
+		<xs:sequence>
+			<xs:element name="eqtTypeCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="BaseMonthlyLimit">
+		<xs:sequence>
+			<xs:element name="baseMthLmtQty" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="15" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="dropOffChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtSubtyCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtTypeCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtTypeSzCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="5" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="locIdNbr" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="10" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tieredRateFlg" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="EquipmentBatch">
+		<xs:sequence>
+			<xs:element name="batchNumber" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="20" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentBatchDetailList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="equipmentBatchDetail" type="tns:EquipmentBatchDetail"
+							minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="EquipmentBatchDetail">
+		<xs:sequence>
+			<xs:element name="equipmentSubTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentTypeSizeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="plannedQuantity" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="14" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="batchNumber" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GlobalRule">
+		<xs:sequence>
+			<xs:element name="globalRlNbr" type="xs:long" />
+			<xs:element name="locIdNbr" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="15" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ofhrPct" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="13" />
+						<xs:fractionDigits value="5" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rangeFromDt" type="xs:dateTime"
+				minOccurs="0" />
+			<xs:element name="rangeToDt" type="xs:dateTime" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="InspectionCriteria">
+		<xs:sequence>
+			<xs:element name="axleAgeNbr" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="15" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="dppRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtAgeLeNbr" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="3" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtColrName" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtGrossWt" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="3" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtManufacturerName" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="50" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtMdlName" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="25" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtTypeCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="factoryWrntyDescTxt" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="50" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="gensetOperatingHr" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="3" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="inspCrtraCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="lumpsumRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="remacFlg" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="remarksDescTxt" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="50" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tarpaulinDpctnMthdName" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="25" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tarpaulinRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tireDpctnMthdName" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="30" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tireDpctnRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tireLbrRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tireSpecsTxt" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="100" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SharedMonthlyLimit">
+		<xs:sequence>
+			<xs:element name="sharedSetNbr" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:long">
+						<xs:totalDigits value="15" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EquipmentProfile">
+		<xs:sequence>
+			<xs:element name="equipmentProfileNumber" type="xs:long" />
+			<xs:element name="buyoutAdvanceNoticeDaysCount" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="22" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="buyoutOpitionFlag" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="buyoutOptionDeadLineDate" type="xs:dateTime"
+				minOccurs="0" />
+			<xs:element name="buyoutRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentSubTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentTypeSizeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="5" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="lessCasualtyRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="moreCasualtyRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="postBuilddownPerdiemFlag" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MonthlyLimitFactor">
+		<xs:sequence>
+			<xs:element name="mnthlyLmtFctrNbr" type="xs:long" />
+			<xs:element name="eqtTypeCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="fctrNbr" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="9" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="qtyFromVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="38" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="qtyToVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="38" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="OneTimeCharge">
+		<xs:sequence>
+			<xs:element name="oneTmChrgNbr" type="xs:long" />
+			<xs:element name="eqtSubtyCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtTypeCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtTypeSzCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="5" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="frDaysCnt" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="22" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="midleaseFrDaysBeginDt" type="xs:dateTime"
+				minOccurs="0" />
+			<xs:element name="midleaseFrDaysCnt" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="22" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ofhrDiFeeVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ofhrDropOffChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ofhrHndlInChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ofhrMiscChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ofhrPostTripInspFeeVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="onhrDiFeeVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="onhrHndlOutChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="onhrMiscChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="onhrPickupChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="onhrPreTripInspFeeVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rePlatingAdminVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="OneTimeChargeByDate">
+		<xs:sequence>
+			<xs:element name="dropOffChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="fromDt" type="xs:dateTime" minOccurs="0" />
+			<xs:element name="toDt" type="xs:dateTime" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="OneTimeChargeByLocation">
+		<xs:sequence>
+			<xs:element name="dropOffChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtSubtyCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtTypeCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtTypeSzCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="5" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="hndlInChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="hndlOutChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="locIdNbr" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="10" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="pickupChrgVal" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PerdiemByDate">
+		<xs:sequence>
+			<xs:element name="fromDate" type="xs:dateTime" minOccurs="0" />
+			<xs:element name="hcpRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rentRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rspRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="toDate" type="xs:dateTime" minOccurs="0" />
+			<xs:element name="equipmentTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentSubTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="locationIdNumber" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="10" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PerdiemByVolume">
+		<xs:sequence>
+			<xs:element name="hcpRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rangeFromValue" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="38" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rangeToValue" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="38" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rentRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rspRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentSubTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PerdiemByLocation">
+		<xs:sequence>
+			<xs:element name="hcpRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rentRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rspRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="locationIdNumber" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="10" />
+						<xs:fractionDigits value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PostBuilddownRate">
+		<xs:sequence>
+			<xs:element name="postBuildDownRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="equipmentSubTypeCode" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="TaxLicensingCharge">
+		<xs:sequence>
+			<xs:element name="chsUseTaxRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cntryCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtSubtyCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtTypeCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="eqtTypeSzCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="5" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="licensingAnnlBillDt" type="xs:dateTime"
+				minOccurs="0" />
+			<xs:element name="licensingAnnlLumpsumRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="licensingPerdiemRate" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="20" />
+						<xs:fractionDigits value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="stCd" form="unqualified">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>  

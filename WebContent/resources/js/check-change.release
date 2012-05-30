@@ -1,0 +1,7 @@
+This js function for check the change of elements, before page was left.
+
+1. To add including, <h:outputScript library="js" name="check-change.js" />	 
+2. To add a class named 'check_change' on your form and the elements on that form, 
+  which means these elements needed check before page was left.
+3. To add a class named 'refresh_change_status', when you have a button which use ajax method to request,
+  it will stop check when you leave this page.

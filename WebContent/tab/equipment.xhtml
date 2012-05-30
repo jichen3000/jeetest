@@ -1,0 +1,18 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+	<h:form id="equipmentForm">
+		<h:outputLabel value="Name" />
+		<h:inputText value="#{equipmentBean.equipment.name}" />
+		<h:outputLabel value="Quantity" />
+		<h:inputText value="#{equipmentBean.equipment.quantity}" />
+
+		<h:panelGroup style="float:Right;">
+			<p:commandButton value="save" ajax="true" styleClass="save_by_all"
+				action="#{equipmentBean.save}" process="@this, equipmentForm"/>
+		</h:panelGroup>
+
+	</h:form>
+</ui:fragment>

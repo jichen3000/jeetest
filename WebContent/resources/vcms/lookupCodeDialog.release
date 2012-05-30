@@ -1,0 +1,27 @@
+This composite need these parameters
+	 
+	 the example:
+	   this is the command which invoke the dialog.
+		<p:commandLink oncomplete="typeCodeDialog.show();"
+			actionListener="#{codeBean.showTypeCodeDialog}"
+			update="typeCodeDialogDiv">
+			<p:graphicImage onclick=""
+				url="/resources/images/VCMS_Icon_Search.png"
+				styleClass="imageButton" />
+		</p:commandLink>
+		this is how to use the composite
+		<vcms:lookupCodeDialog 
+			dialogShowName="Type "
+			dialogWidetVar="typeCodeDialog" 
+			codeList="#{codeBean.typeCodeList}" 
+			searchParamCode="#{codeBean.searchTypeCodeParam}"
+			searchCodeAction="#{codeBean.searchTypeCode}"
+			updateElement="createForm:typeCode" 
+		 />
+	 dialogShowName : the name will be showed as the dialog title.
+	 dialogWidetVar : this is the dialog div var name which be used Primefaces, you need to use "dialogWidetVar.show();".
+	 codeList : the list of the code objects.
+	 searchParamCode : the object is the parameter object used by searching code list.
+	 searchCodeAction : the action is used by searching code list.
+	 updateElement : the html element which will be inputed the value selected.
+	 

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:vcms="http://java.sun.com/jsf/composite/vcms">
+<h:head>
+	<title>common</title>
+	<h:outputScript library="js" name="check-change.js" />
+</h:head>
+<h:body bgcolor="white">
+	<h2>
+		<h:outputText value="Main" />
+	</h2>
+
+	<p:panel header="Create" toggleable="true">
+		<h:form id="createForm" styleClass="check_change">
+			<h:panelGrid columns="4" style="width:60%">
+				<h:outputLabel value="title" />
+				<h:inputText value="#{bookBean.book.title}"
+					styleClass="check_change" />
+				<h:outputLabel value="Type/Type Code" />
+				<h:panelGroup>
+					<h:inputText id="typeCode" value="#{bookBean.book.typeCode}"
+						size="9" styleClass="check_change"></h:inputText>
+					<!-- <p:watermark for="typeCode" value="Choose" /> -->
+					<p:commandLink oncomplete="typeCodeDialog.show();"
+						actionListener="#{codeBean.showTypeCodeDialog}"
+						update="typeCodeDialogDiv">
+						<p:graphicImage onclick=""
+							url="/resources/images/VCMS_Icon_Search.png"
+							styleClass="imageButton" />
+					</p:commandLink>
+				</h:panelGroup>
+				<h:outputLabel value="Publisher/Publisher Code" />
+				<h:panelGroup>
+					<h:inputText id="publisherCode"
+						value="#{bookBean.book.publisherCode}" size="9"
+						styleClass="check_change"></h:inputText>
+					<!-- <p:watermark for="publisherCode" value="Choose" /> -->
+					<p:commandLink oncomplete="publisherCodeDialog.show();"
+						actionListener="#{bookBean.showPublisherCodeDialog}"
+						update="publisherCodeDialogForm">
+						<p:graphicImage onclick=""
+							url="/resources/images/VCMS_Icon_Search.png"
+							styleClass="imageButton" />
+					</p:commandLink>
+				</h:panelGroup>
+
+				<h:panelGroup style="float:Right;">
+					<p:commandButton value="save" ajax="false"
+						action="#{bookBean.save}" />
+				</h:panelGroup>
+			</h:panelGrid>
+		</h:form>
+	</p:panel>
+	<p:panel header="other" toggleable="true">
+		<h:form id="otherForm" styleClass="check_change">
+			<h:outputLabel value="title" />
+			<h:inputText value="#{bookBean.book.title}" styleClass="check_change" />
+			<p:commandButton value="save" ajax="true"
+				styleClass="refresh_change_status" />
+			<h:commandLink action="/inbox/list.xhtml" value="go to inbox">
+				<f:param name="transParam" value="welcome" />
+			</h:commandLink>
+			<h:commandLink action="#{bookBean.gotoWithParam()}" value="go to inbox other">
+			</h:commandLink>
+		</h:form>
+	</p:panel>
+	<vcms:lookupCodeDialog dialogShowName="Type "
+		dialogWidetVar="typeCodeDialog" codeList="#{codeBean.typeCodeList}"
+		searchParamCode="#{codeBean.searchTypeCodeParam}"
+		searchCodeAction="#{codeBean.searchTypeCode}"
+		updateElement="createForm:typeCode" />
+</h:body>
+</html>
