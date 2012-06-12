@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+<h:head>
+	<title>common</title>
+</h:head>
+<h:body bgcolor="white">
+	<h2>
+		<h:outputText value="Main" />
+	</h2>
+
+	<p:panel header="Create" toggleable="true">
+		<h:form id="createForm" styleClass="">
+
+			<h:panelGroup style="float:Right;">
+				<p:commandButton value="Open Dialog" ajax="true"
+					oncomplete="rendredDialog.show();"
+					actionListener="#{renderedBean.showRendredDialog}"
+					update="renderedGroup" />
+			</h:panelGroup>
+		</h:form>
+	</p:panel>
+	<p:dialog header="Rendered" appendToBody="true"
+		widgetVar="rendredDialog" resizable="false" modal="true" width="600">
+		<h:panelGroup style="float:Right;" id="renderedGroup">
+			<h:form id="rendredDialogForm" prependId="false"
+				rendered="#{renderedBean.editing}">
+				<h:panelGrid columns="5" width="100%">
+					<h:outputText value="Code:">
+					</h:outputText>
+					<h:inputText size="30" value="#{renderedBean.name}"></h:inputText>
+				</h:panelGrid>
+				<p:commandButton value="OK" style="left:50%" styleClass="okc"
+					oncomplete="rendredDialog.hide();"></p:commandButton>
+			</h:form>
+		</h:panelGroup>
+	</p:dialog>
+
+
+</h:body>
+</html>

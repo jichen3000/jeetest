@@ -69,7 +69,7 @@ public abstract class AbstractService<T> {
 		cq.select(cq.from(entityClass));
 
 		javax.persistence.Query q = getEntityManager().createQuery(cq);
-		q.setMaxResults(range[1] - range[0]);
+		q.setMaxResults(range[1]);
 		q.setFirstResult(range[0]);
 
 		return q.getResultList();

@@ -5,8 +5,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.event.ActionEvent;
 import javax.inject.Inject;
+
+import org.primefaces.event.TabChangeEvent;
 
 import colin.tab.entity.ChargeEntity;
 import colin.tab.entity.ContractEntity;
@@ -53,9 +54,14 @@ public class TabBean {
 
 
 	
-	public void onTabChange(ActionEvent actionEvent){
-        FacesContext context = FacesContext.getCurrentInstance();  
-        context.addMessage(null, new FacesMessage("Successful", "Hello "));  
-
+//	public void onTabChange(ActionEvent actionEvent){
+//        FacesContext context = FacesContext.getCurrentInstance();  
+//        context.addMessage(null, new FacesMessage("Successful", "Hello "));  
+//
+//	}
+	public void onTabChange(TabChangeEvent event) {       
+      FacesContext context = FacesContext.getCurrentInstance();  
+      context.addMessage(null, new FacesMessage("Successful", "Hello "+ event.getTab().getId()));  
+	    System.out.println("tab id = " + event.getTab().getId());
 	}
 }

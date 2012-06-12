@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet name="css/jsfcrud.css" />
+</h:head>
+<h:body bgcolor="white">
+	<h:form id="lazyDataForm">
+		<p:dataTable id="lazyDataTable" value="#{dadLazyBean.dadList}"
+			var="var" paginator="true" rows="3"
+			paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+			lazy="true">
+			<p:columnGroup type="header">
+				<p:row>
+					<p:column headerText="ID" />
+					<p:column headerText="Name" />
+				</p:row>
+			</p:columnGroup>
+			<p:column>
+				<h:commandLink value="#{var.id}" />
+			</p:column>
+			<p:column>
+				<h:outputText value="#{var.name}" />
+			</p:column>
+		</p:dataTable>
+		<h:commandLink action="#{dadLazyBean.genTestDate}" value="gen data">
+		</h:commandLink>
+	</h:form>
+</h:body>
+</html>
+

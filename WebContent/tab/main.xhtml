@@ -26,8 +26,9 @@
 
 	<p:growl id="growl" showDetail="true" />
 
-	<p:tabView id="tabView" dynamic="true">
-		<p:tab title="Charge" id="charge">
+	<p:tabView id="tabView" dynamic="true" tabChangeListener="#{tabBean.onTabChange}" 
+	 onTabChange="handleTabChange(event, ui)">
+		<p:tab title="Charge" id="charge" styleClass="tab_div">
 			<ui:include src="/tab/charge.xhtml" />
 		</p:tab>
 
@@ -40,7 +41,17 @@
 	    function allSave(){
 	    	jQuery('button.save_by_all').click();
 	    }
-		
+	    var preTabId="charge";
+	    function handleTabChange(event, ui) {
+	    	//alert("preTabIndex:"+preTabIndex);
+	    	if("null"!=preTabId){
+	    		jQuery(".ui-tabs-panel#"+preTabId).find("button.save_by_all").click();
+	    	}
+	    	preTabId = ui.panel.id;
+	   	 //ui.tab = title element of the selected tab
+	   	 //ui.panel = container element of the selected tab
+	   	 //ui.index = index of the selected tab
+	   }	
 	</script>
 </h:body>
 </html>
