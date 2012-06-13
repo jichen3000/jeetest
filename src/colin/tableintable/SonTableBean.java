@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 
+import colin.common.ComponentHelper;
 import colin.deletechild.SonEntity;
 import colin.deletechild.SonService;
 
@@ -19,6 +20,14 @@ public class SonTableBean {
 
 	private SonEntity selectedSon;
 	private HashMap<Long,Boolean> sonEditableHash=new HashMap<Long,Boolean>();
+	public void setValue1(){
+		selectedSon.setName("colin");
+	}
+	public String getSubClientId(String fullClientId, String posClientId){
+		return ComponentHelper.getSubClientId(fullClientId, posClientId);
+//		System.out.println("getClientId");
+//		return "123";
+	}
 	public boolean isSonEditing(Long id){
 		if (sonEditableHash.get(id)==null){
 			return false;

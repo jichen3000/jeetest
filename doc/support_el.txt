@@ -1,0 +1,58 @@
+In order to support the EL in websphere project, we need to do as the below:
+1. Update your svn, in 'libraries' project's 'JSF-2.0' directory.
+  Then you will see the two jar, 'el-api-2.2.jar' and 'el-impl-2.2.jar'.
+2. Configure 'VcmsAppWeb' project. 
+  a. Add these two jars in your project:
+    Right click VcmsAppWeb > Properties > Deployment Assembly.
+    Then click 'add', select 'Archives from Workspace', next click 'add', select 'libraries', finally choose 'el-api-2.2.jar' and 'el-impl-2.2.jar' in the 'JSF-2.0'   
+  b. Add the below lines in your web.xml(actually we can update this file in the svn, but it need to be agreed by the SH team)
+	<context-param>
+	    <param-name>com.sun.faces.expressionFactory</param-name>
+	    <param-value>com.sun.el.ExpressionFactoryImpl</param-value>
+	</context-param>
+3. Test if it could be used correctly.
+  restart your webapp.
+  use the url http://localhost:9080/VcmsAppWeb/xhtml/tsc/waterport/tscWaterportTabs.xhtml
+  choose the ‘Rate Items’ tab, edit one record, column “Cost Center” could be selected. That works.
+
+  
+
+Now, we can call the method in the ManagedBean. 
+We do it for using hashmap in the h:selectOneMenu.
+
+In ManagedBean:
+                private Map<String, String> uomMap;
+uomMap = masterDataAppService.getUoms();
+
+In Service:
+                public Map<String, String> getUoms() {
+                                 return Util.strListToMap(em.createQuery("SELECT e.uomCd, e.uomName FROM Uom e").getResultList());
+                 }
+
+
+In JSF:
+			<p:column headerText="UOM">
+                <h:outputText value="#{tsvscRateItemBean.uomMap[row.entity.uomCd]}"
+                              rendered="#{!row.inputRender}" />
+                <h:selectOneMenu value="#{row.entity.uomCd}" rendered="#{row.inputRender}">
+                    <f:selectItem itemLabel="Select" itemValue=""/>
+                    <f:selectItems value="#{tsvscRateItemBean.uomMap.entrySet()}" var="entry" 
+                                   itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                </h:selectOneMenu>
+             </p:column>
+
+In Util class:
+public class Util {
+    
+    public static Map<String, String> strListToMap(List<Object[]> list) {
+        if (list == null || list.isEmpty()) {
+            return new LinkedHashMap<String, String>();
+        }
+        Map<String, String> map = new LinkedHashMap<String, String>();
+        for (Object[] item : list) {
+            map.put(item[0].toString(), item[1].toString());
+        }
+        return map;
+    }
+}
+   

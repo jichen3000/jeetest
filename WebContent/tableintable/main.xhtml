@@ -16,8 +16,6 @@
 
 	<p:panel header="Create" toggleable="true">
 		<h:form id="createForm" styleClass="check_change">
-
-
 			<h:panelGroup>
 				<p:dataTable id="dadTable" value="#{tableInTableBean.dadList}"
 					style="width:100%" var="item" rowIndexVar="rowIndex" rowKey="key"
@@ -28,7 +26,6 @@
 					<p:column id="codeRadio" selectionMode="single" />
 					<p:column style="min-width:45px;">
 						<f:facet name="header"></f:facet>
-
 						<p:rowToggler />
 					</p:column>
 
@@ -54,49 +51,53 @@
 						<p:dataTable var="sonItem" id="sonTable" value="#{item.sonList}"
 							dynamic="true" rowIndexVar="sonRowIndex">
 
-
+							<p:selectOneMenu onchange="#{sonTableBean.setValue1()}" update="outputId">
 							<p:column>
 								<f:facet name="header"></f:facet>
-
-								<p:commandLink id="mm123"
-									actionListener="#{sonTableBean.setSonEditing(sonItem.id)}"
-									update="#{component.parent.parent.parent.parent.clientId}:#{component.parent.parent.id}"
+								<h:panelGroup
 									rendered="#{!sonTableBean.isSonEditing(sonItem.id)}">
-									<h:graphicImage url="/resources/images/VCMS_Perdiem_Edit.png"
-										styleClass="imageButton" />
-								</p:commandLink>
-								<p:commandLink update="dadTable:#{rowIndex}:sonTable"
-									actionListener="#{sonTableBean.copyDetailsRow}"
-									rendered="#{!sonTableBean.isSonEditing(sonItem.id)}">
-									<h:graphicImage
-										url="/resources/images/VCMS_AddContract_Equipment_Profile_unfold.png"
-										styleClass="imageButton" />
-								</p:commandLink>
-								<p:commandLink
-									actionListener="#{sonTableBean.deleteDetailsRows}"
-									update="dadTable:#{rowIndex}:sonTable"
-									rendered="#{!sonTableBean.isSonEditing(sonItem.id)}">
-									<h:graphicImage styleClass="imageButton" style="margin:1px;"
-										url="/resources/images/GEM_Icon_Delete.PNG" />
-								</p:commandLink>
-								<p:commandLink update="dadTable:#{rowIndex}:sonTable"
-									actionListener="#{sonTableBean.saveRow}"
+									<p:commandLink
+										actionListener="#{sonTableBean.setSonEditing(sonItem.id)}"
+										update="#{sonTableBean.getSubClientId(component.clientId, 'sonTable')}">
+										<h:graphicImage url="/resources/images/VCMS_Perdiem_Edit.png"
+											styleClass="imageButton" />
+									</p:commandLink>
+									<p:commandLink actionListener="#{sonTableBean.copyDetailsRow}"
+										update="#{sonTableBean.getSubClientId(component.clientId, 'sonTable')}">
+										<h:graphicImage
+											url="/resources/images/VCMS_AddContract_Equipment_Profile_unfold.png"
+											styleClass="imageButton" />
+									</p:commandLink>
+									<p:commandLink
+										actionListener="#{sonTableBean.deleteDetailsRows}"
+										update="#{component.parent.parent.parent.parent.clientId}:#{component.parent.parent.id}">
+										<h:graphicImage styleClass="imageButton" style="margin:1px;"
+											url="/resources/images/GEM_Icon_Delete.PNG" />
+									</p:commandLink>
+								</h:panelGroup>
+								<h:panelGroup
 									rendered="#{sonTableBean.isSonEditing(sonItem.id)}">
-									<h:graphicImage
-										url="/resources/images/VCMS_Perdiem_EditSave.png"
-										styleClass="imageButton" />
-								</p:commandLink>
-								<p:commandLink update="dadTable:#{rowIndex}:sonTable"
-									actionListener="#{sonTableBean.cancelOperation}"
-									rendered="#{sonTableBean.isSonEditing(sonItem.id)}">
-									<h:graphicImage
-										url="/resources/images/VCMS_Perdiem_CancelEdit.png"
-										styleClass="imageButton" />
-								</p:commandLink>
+									<p:commandLink actionListener="#{sonTableBean.saveRow}"
+										update="#{component.parent.parent.parent.parent.clientId}:#{component.parent.parent.id}">
+										<h:graphicImage
+											url="/resources/images/VCMS_Perdiem_EditSave.png"
+											styleClass="imageButton" />
+									</p:commandLink>
+									<p:commandLink actionListener="#{sonTableBean.cancelOperation}"
+										update="#{component.parent.parent.parent.parent.clientId}:#{component.parent.parent.id}">
+										<h:graphicImage
+											url="/resources/images/VCMS_Perdiem_CancelEdit.png"
+											styleClass="imageButton" />
+									</p:commandLink>
+								</h:panelGroup>
 							</p:column>
 							<p:column>
 								<f:facet name="header">id</f:facet>
 								<h:outputText value="#{sonItem.id}" />
+							</p:column>
+							<p:column>
+								<f:facet name="header">component id</f:facet>
+								<h:outputText value="#{component.parent.parent.class}:#{component.parent.parent.id}" />
 							</p:column>
 						</p:dataTable>
 					</p:rowExpansion>
