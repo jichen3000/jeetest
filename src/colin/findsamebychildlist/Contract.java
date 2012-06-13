@@ -16,7 +16,7 @@ public class Contract {
 	
 	public boolean checkSameSeriese(Contract other){
 		if (other==null) return false;
-		return SameSeriese.checkListInSameSeriese(prediemList,other.getPrediemList());
+		return SameSeriese.checkUnsortedListInSameSeriese(prediemList,other.getPrediemList());
 	}
 
 	public List<Perdiem> getPrediemList() {

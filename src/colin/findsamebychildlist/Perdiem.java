@@ -4,7 +4,7 @@ import colin.common.SequenceHelper;
 
 
 
-public class Perdiem implements SameSeriesable<Perdiem>,Comparable<Perdiem>{
+public class Perdiem implements SameSeriesable<Perdiem>{
 
 	public Perdiem(String type, long rangeFromVal, long rangeToVal) {
 		super();
