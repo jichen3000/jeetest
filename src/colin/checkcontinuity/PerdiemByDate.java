@@ -44,7 +44,7 @@ public class PerdiemByDate implements RangeContinuity<PerdiemByDate, Date>,Compa
 	    i = this.subType.compareTo(other.subType);
 	    if (i != 0) return i;
 	    
-	    return this.fromDt.compareTo(other.toDt);
+	    return this.fromDt.compareTo(other.fromDt);
 	}
 
 	@Override

@@ -14,6 +14,7 @@ public class RenderedBean {
 		this.name = "123";
 	}
 	public void changeEditing() {
+		System.out.println("changeEditing");
 		this.editing = (!this.editing);
 	}
 	public boolean isEditing() {
